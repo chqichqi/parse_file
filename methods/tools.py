@@ -1008,9 +1008,9 @@ def make_modify_data(obj, file_name_list, user_id, device_number, file_time, mod
                 encrypt_flg, ty = validate_fileIsEncrypt(file_data)
                 if encrypt_flg != 0:  # 已加密
                     if ty == 'new':
-                        logging.info(f'文件{enc_file_name}已加密，正在解密文件...')
+                        logging.info(f'文件{item}已加密，正在解密文件...')
                         pack_data_list, mateInfo_length = dll_obj.decrypt_new_protocol_file(file_data, ty)
-                        logging.info(f'文件{enc_file_name}解密结束...')
+                        logging.info(f'文件{item}解密结束...')
                         # 保存解密后的数据
                         file_data = make_new_file_data(file_data, pack_data_list, item, mateInfo_length)
             logging.info('开始修改数据...')
